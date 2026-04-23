@@ -1,6 +1,9 @@
 // Ultra-Premium Tech Interaction Logic
 
 document.addEventListener('mousemove', (e) => {
+    // Check if device supports touch to avoid jumpy behavior on mobile
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
     const frame = document.querySelector('.main-glass-frame');
     const glow1 = document.querySelectorAll('.glow-point')[0];
     const glow2 = document.querySelectorAll('.glow-point')[1];
