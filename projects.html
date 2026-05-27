@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Suryansh Soni</title>
+    
+    <!-- SEO Metadata -->
+    <meta name="description" content="Official Portfolio of Suryansh Soni, Startup Founder of TechNova Solutions. Full-Stack Web Developer, UI/UX Designer, and Shopify Expert based in Vadodara, Gujarat, India.">
+    <meta name="keywords" content="Suryansh Soni, TechNova Solutions, Suryansh Soni Vadodara, Web Developer Gujarat, WordPress Developer, MirrorMe, SkillSync, Web Architect">
+    <meta name="author" content="Suryansh Soni">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suryanshsoni.in/projects.html">
+    <meta property="og:title" content="Projects | Suryansh Soni">
+    <meta property="og:description" content="Futuristic Web Portfolio of Suryansh Soni, Startup Founder of TechNova Solutions. Based in Vadodara, Gujarat, India.">
+    <meta property="og:image" content="assets/me_3d.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas and Scene -->
+    <canvas id="canvas-bg"></canvas>
+    <div class="bg-scene">
+        <div class="grid-overlay"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-glow"></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="navLogo">
+                <svg width="68" height="68" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-screen-pulse">
+                    <!-- Laptop Screen Outer Bezel -->
+                    <rect x="16" y="8" width="68" height="44" rx="4" stroke="var(--primary)" stroke-width="4.5" stroke-linejoin="round"/>
+                    <!-- Laptop Screen Inner Display Panel -->
+                    <rect x="21" y="13" width="58" height="34" rx="2" fill="rgba(255, 0, 60, 0.03)" stroke="var(--primary)" stroke-width="1.5" opacity="0.8"/>
+                    <!-- Camera Dot -->
+                    <circle cx="50" cy="10.5" r="1" fill="var(--primary)"/>
+                    <!-- SS Typing Text inside screen -->
+                    <text x="50" y="30" fill="#ffffff" font-family="'Fira Code', monospace" font-size="18" font-weight="900" text-anchor="middle" dominant-baseline="central" style="text-shadow: 0 0 8px var(--secondary);">
+                        <tspan class="type-char-1">S</tspan><tspan class="type-char-2">S</tspan><tspan class="type-cursor logo-cursor-blink">_</tspan>
+                    </text>
+                    <!-- Laptop Hinge -->
+                    <rect x="42" y="52" width="16" height="3" fill="var(--primary)"/>
+                    <!-- Laptop Base (trapezoid deck) -->
+                    <path d="M 8 55 L 92 55 L 83 67 L 17 67 Z" stroke="var(--primary)" stroke-width="4.5" stroke-linejoin="round" fill="rgba(255, 0, 60, 0.02)"/>
+                    <!-- Laptop Base Trackpad -->
+                    <rect x="44" y="61" width="12" height="4" rx="0.5" stroke="var(--primary)" stroke-width="1.2" fill="none"/>
+                    
+                    <!-- External Keyboard -->
+                    <rect x="12" y="75" width="58" height="17" rx="3" stroke="var(--secondary)" stroke-width="3" fill="rgba(138, 43, 226, 0.04)"/>
+                    <!-- Keyboard Keys (dashed lines represent key rows) -->
+                    <line x1="16" y1="79" x2="66" y2="79" stroke="var(--secondary)" stroke-width="1.5" stroke-dasharray="2 2"/>
+                    <line x1="16" y1="83" x2="66" y2="83" stroke="var(--secondary)" stroke-width="1.5" stroke-dasharray="3 2"/>
+                    <!-- Spacebar & Modifier Keys -->
+                    <rect x="16" y="87" width="4" height="2" rx="0.5" fill="var(--secondary)"/>
+                    <rect x="28" y="87" width="26" height="2" rx="0.5" fill="var(--secondary)"/>
+                    <rect x="56" y="87" width="4" height="2" rx="0.5" fill="var(--secondary)"/>
+                    <rect x="62" y="87" width="4" height="2" rx="0.5" fill="var(--secondary)"/>
+                    
+                    <!-- External Mouse -->
+                    <rect x="75" y="75" width="13" height="17" rx="4.5" stroke="var(--secondary)" stroke-width="2.5" fill="rgba(138, 43, 226, 0.04)"/>
+                    <!-- Mouse Buttons Division & Scroll Wheel -->
+                    <line x1="81.5" y1="75" x2="81.5" y2="82" stroke="var(--secondary)" stroke-width="1.2"/>
+                    <line x1="75" y1="82" x2="88" y2="82" stroke="var(--secondary)" stroke-width="1.2"/>
+                    <rect x="80.5" y="77" width="2" height="3.5" rx="0.5" fill="#ffffff"/>
+                </svg>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="projects" class="projects-section scroll-reveal active">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Creative Works</h2>
+                    <div class="section-bar"></div>
+                </div>
+                
+                <div class="filters-container">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="apps">Apps</button>
+                    <button class="filter-btn" data-filter="saas">SaaS</button>
+                    <button class="filter-btn" data-filter="ecom">E-Commerce</button>
+                    <button class="filter-btn" data-filter="tools">Tools</button>
+                    <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: AI Music -->
+                    <div class="project-card" data-category="apps">
+                        <div class="project-card-header">
+                            <span class="project-badge">AI Audio / Generation</span>
+                            <h3 class="project-card-title">AI Short Music Development</h3>
+                        </div>
+                        <p class="project-card-desc">An audio generation showcase containing custom-trained AI music tracks. Play the featured track "Aasman Se Aage" directly.</p>
+                        <div class="project-tech-pills">
+                            <span class="tech-pill">Suno AI</span>
+                            <span class="tech-pill">HTML5 Audio</span>
+                            <span class="tech-pill">Web Audio API</span>
+                            <span class="tech-pill">JavaScript</span>
+                        </div>
+                        <div class="project-card-actions">
+<button class="btn btn-secondary btn-small project-details-btn" data-id="ai-music">Specs</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: MirrorMe -->
+                    <div class="project-card" data-category="saas">
+                        <div class="project-card-header">
+                            <span class="project-badge">SaaS / Employee Management</span>
+                            <h3 class="project-card-title">MirrorMe</h3>
+                        </div>
+                        <p class="project-card-desc">A responsive SaaS-style Employee & Intern Management System with admin control, work tracking, and internal chat.</p>
+                        <div class="project-tech-pills">
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">Express</span>
+                            <span class="tech-pill">WebSockets</span>
+                            <span class="tech-pill">MongoDB</span>
+                        </div>
+                        <div class="project-card-actions">
+<button class="btn btn-secondary btn-small project-details-btn" data-id="mirrorme">Specs</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: SkillSync -->
+                    <div class="project-card" data-category="apps">
+                        <div class="project-card-header">
+                            <span class="project-badge">Collaboration App</span>
+                            <h3 class="project-card-title">SkillSync</h3>
+                        </div>
+                        <p class="project-card-desc">A collaborative application where freelancers connect, form teams, and work on projects together.</p>
+                        <div class="project-tech-pills">
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">LocalDB</span>
+                            <span class="tech-pill">Socket.io</span>
+                            <span class="tech-pill">REST APIs</span>
+                        </div>
+                        <div class="project-card-actions">
+<button class="btn btn-secondary btn-small project-details-btn" data-id="skillsync">Specs</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Auto Elite Garage -->
+                    <div class="project-card" data-category="ecom">
+                        <div class="project-card-header">
+                            <span class="project-badge">Commercial Web Portal</span>
+                            <h3 class="project-card-title">Auto Elite Garage</h3>
+                        </div>
+                        <p class="project-card-desc">A modern automotive-themed commercial website project showing responsive layouts and custom booking features.</p>
+                        <div class="project-tech-pills">
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">CSS3 (Variables)</span>
+                            <span class="tech-pill">JavaScript (ES6)</span>
+                            <span class="tech-pill">ScrollReveal.js</span>
+                        </div>
+                        <div class="project-card-actions">
+<button class="btn btn-secondary btn-small project-details-btn" data-id="auto-elite-garage">Specs</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Band8War -->
+                    <div class="project-card" data-category="tools">
+                        <div class="project-card-header">
+                            <span class="project-badge">EdTech / Utility Tool</span>
+                            <h3 class="project-card-title">Band8War (IELTS Planner)</h3>
+                        </div>
+                        <p class="project-card-desc">A single-page web app helping students track IELTS scores, monitor progress, and follow a personalized 20-day plan.</p>
+                        <div class="project-tech-pills">
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">CSS Grid</span>
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">Chart.js</span>
+                            <span class="tech-pill">Local Storage</span>
+                        </div>
+                        <div class="project-card-actions">
+<button class="btn btn-secondary btn-small project-details-btn" data-id="band8war">Specs</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: ResumeHub AI -->
+                    <div class="project-card" data-category="apps">
+                        <div class="project-card-header">
+                            <span class="project-badge">AI Application</span>
+                            <h3 class="project-card-title">ResumeHub_AI</h3>
+                        </div>
+                        <p class="project-card-desc">An AI-powered resume screening, analysis, and optimization workspace for job seekers and HR managers.</p>
+                        <div class="project-tech-pills">
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">OpenAI API</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">PDF.js</span>
+                        </div>
+                        <div class="project-card-actions">
+<button class="btn btn-secondary btn-small project-details-btn" data-id="resumehub-ai">Specs</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: Dhan Suraksha -->
+                    <div class="project-card" data-category="tools">
+                        <div class="project-card-header">
+                            <span class="project-badge">FinTech / Utility</span>
+                            <h3 class="project-card-title">Dhan-Suraksha</h3>
+                        </div>
+                        <p class="project-card-desc">A personal financial budget manager, saving estimator, and investment calculator.</p>
+                        <div class="project-tech-pills">
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">CSS3</span>
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">Local Storage</span>
+                            <span class="tech-pill">SVG Charts</span>
+                        </div>
+                        <div class="project-card-actions">
+<button class="btn btn-secondary btn-small project-details-btn" data-id="dhan-suraksha">Specs</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 8: Glassified.ca -->
+                    <div class="project-card" data-category="wordpress">
+                        <div class="project-card-header">
+                            <span class="project-badge">WordPress E-commerce Client</span>
+                            <h3 class="project-card-title">Glassified.ca</h3>
+                        </div>
+                        <p class="project-card-desc">WordPress e-commerce shop specializing in custom glassware, architectural mirrors, and glass fittings.</p>
+                        <div class="project-tech-pills">
+                            <span class="tech-pill">WordPress</span>
+                            <span class="tech-pill">WooCommerce</span>
+                            <span class="tech-pill">Elementor Pro</span>
+                            <span class="tech-pill">PHP / MySQL</span>
+                        </div>
+                        <div class="project-card-actions">
+<button class="btn btn-secondary btn-small project-details-btn" data-id="wordpress-glassified">Specs</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 9: HealthyRasoi.in -->
+                    <div class="project-card" data-category="wordpress">
+                        <div class="project-card-header">
+                            <span class="project-badge">WordPress Food Platform</span>
+                            <h3 class="project-card-title">HealthyRasoi.in</h3>
+                        </div>
+                        <p class="project-card-desc">A healthy recipe blog, meal plan organizer, and organic food delivery portal.</p>
+                        <div class="project-tech-pills">
+                            <span class="tech-pill">WordPress</span>
+                            <span class="tech-pill">Elementor</span>
+                            <span class="tech-pill">WooCommerce</span>
+                            <span class="tech-pill">W3 Total Cache</span>
+                        </div>
+                        <div class="project-card-actions">
+<button class="btn btn-secondary btn-small project-details-btn" data-id="wordpress-healthyrasoi">Specs</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal specs Window -->
+    <div id="projectModal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span class="modal-title-text">// PROJECT SPECIFICATIONS</span>
+                <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span id="modalTag" class="modal-tag"></span>
+                <h3 id="modalTitle" class="modal-title"></h3>
+                <p id="modalDesc" class="modal-desc"></p>
+                
+                <div class="modal-meta-grid">
+                    <div class="meta-col">
+                        <h4>Client / Context</h4>
+                        <p id="modalClient"></p>
+                    </div>
+                    <div class="meta-col">
+                        <h4>Timeline</h4>
+                        <p id="modalDuration"></p>
+                    </div>
+                </div>
+                
+                <div class="modal-tech-wrap">
+                    <h4>Engineered With</h4>
+                    <div id="modalTech" class="modal-tech-list"></div>
+                </div>
+
+                <!-- Custom Audio Player inside Modal for AI Music -->
+                <div id="modalAudioPlayer" class="modal-audio-player" style="display: none; margin-bottom: 2rem;">
+                    <div class="audio-player-card">
+                        <div class="player-controls">
+                            <button id="playerPlayBtn" class="player-btn" aria-label="Play">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </button>
+                            <div class="player-info">
+                                <span class="track-name">Aasmaan Ki Manzil</span>
+                                <span class="track-artist">Suno AI - Hindi</span>
+                            </div>
+                        </div>
+                        <div class="player-progress-container">
+                            <span id="playerCurrentTime" class="player-time">0:00</span>
+                            <div id="playerProgressBar" class="player-progress-bar">
+                                <div id="playerProgressFill" class="player-progress-fill"></div>
+                            </div>
+                            <span id="playerDuration" class="player-time">0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <a id="modalEmailBtn" href="#" class="btn btn-primary btn-small">Contact via Email</a>
+                    <a id="modalWhatsappBtn" href="#" target="_blank" class="btn btn-secondary btn-small">Contact via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 Suryansh Soni. All rights reserved.</p>
+            <p class="footer-tagline">Architecting Future Web Ventures.</p>
+        </div>
+    </footer>
+
+    <!-- Application Script -->
+    <script src="script.js"></script>
+</body>
+</html>
