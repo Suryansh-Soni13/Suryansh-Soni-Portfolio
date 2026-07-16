@@ -1,16 +1,6 @@
 // Futuristic Scrolling Portfolio JavaScript - Red Neon & Violet Theme
 
 const projectsData = {
-    'ai-music': {
-        title: 'AI Short Music Development',
-        category: 'apps',
-        badge: 'AI Audio / Generation',
-        brief: 'An audio generation showcase containing custom-trained AI music tracks. Play the featured track directly.',
-        desc: 'This project showcases AI-generated short music tracks, exploring machine learning tools for music production, arrangement, and vocal synthesis. Use the interactive audio player below to listen to the custom-designed track which blends modern synthpop vibes with ambient futuristic soundscapes.',
-        tech: ['Suno AI', 'HTML5 Audio', 'Web Audio API', 'JavaScript'],
-        live: 'assets/Aasmaan_Ki_Manzil.mp3',
-        github: '#'
-    },
     'mirrorme': {
         title: 'MirrorMe',
         category: 'saas',
@@ -336,11 +326,7 @@ function updateAndDrawConfetti(ctx) {
 //   experience.html   → Lecture Hall Hustle (English)
 //   about.html        → Technova Ki Udaan (Hindi)
 //   all other pages   → no music (null = silent)
-const pageTrackMap = {
-    'index.html':      { src: 'assets/Aasmaan_Ki_Manzil.mp3',   name: 'Aasmaan Ki Manzil',   artist: 'Suno AI - Hindi' },
-    'experience.html': { src: 'assets/Lecture_Hall_Hustle.mp3', name: 'Lecture Hall Hustle', artist: 'Suno AI - English' },
-    'about.html':      { src: 'assets/Technova_Ki_Udaan.mp3',   name: 'Technova Ki Udaan',   artist: 'Suno AI - Hindi' }
-};
+const pageTrackMap = {};
 
 let bgAudio = null;
 let isAudioPlaying = false;
@@ -576,7 +562,7 @@ function updatePlayerUI() {
 
 // Inject Floating Music Widget dynamically
 function injectMusicWidget() {
-    if (document.getElementById('musicWidget')) return;
+    return;
     
     const widget = document.createElement('div');
     widget.id = 'musicWidget';
@@ -818,13 +804,7 @@ function openModal(projectId) {
         modalWhatsappBtn.href = `https://wa.me/919601451370?text=${encodeURIComponent(`Hi Suryansh, I am interested in viewing your project "${data.title}".`)}`;
     }
 
-    const modalAudioPlayer = document.getElementById('modalAudioPlayer');
-    if (modalAudioPlayer) {
-        modalAudioPlayer.style.display = 'none';
-        if (projectId === 'ai-music') {
-            initBgAudio();
-        }
-    }
+
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden'; // lock scrolling
